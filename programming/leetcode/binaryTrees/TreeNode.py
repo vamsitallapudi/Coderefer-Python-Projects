@@ -8,5 +8,4 @@ class TreeNode:
 def initializeBinaryTree() -> TreeNode:
     a = TreeNode(2)
     b = TreeNode(3)
-    c = TreeNode(1, a, b)
-    return c
+    return TreeNode(1, a, b)
