@@ -11,6 +11,7 @@ class Solution:
                 inorder(o.left, c.left)
                 if o is target:
                     self.answer = c
+                    return
                 inorder(o.right, c.right)
 
         inorder(original, cloned)
