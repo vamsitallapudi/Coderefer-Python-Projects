@@ -1,6 +1,3 @@
-import itertools
-
-
 class Solution:
     count = 0
 
@@ -9,14 +6,13 @@ class Solution:
         self.calculate(n, 1, visited)
         return self.count
 
-    def calculate(self, n, pos: int, visited: list):
+    def calculate(self, n, pos, visited):
+
         if pos > n:
             self.count += 1
+
         for i in range(1, n + 1):
-            if not visited[i] and (pos % i is 0 or i % pos is 0):
+            if not visited[i] and (pos % i == 0 or i % pos == 0):
                 visited[i] = True
-                self.calculate(n, pos+1, visited)
+                self.calculate(n, pos + 1, visited)
                 visited[i] = False
-
-
-print(Solution().countArrangement(3))
