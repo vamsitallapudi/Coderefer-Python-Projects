@@ -2,21 +2,21 @@ import itertools
 
 
 class Solution:
+    count = 0
+
     def countArrangement(self, n: int) -> int:
-        lst = []
-        count = 0
+        visited = [False for _ in range(0, n + 1)]
+        self.calculate(n, 1, visited)
+        return self.count
+
+    def calculate(self, n, pos: int, visited: list):
+        if pos > n:
+            self.count += 1
         for i in range(1, n + 1):
-            lst.append(i)
-        for i in list(itertools.permutations(lst)):
-            if self.checkBeautiful(i):
-                count += 1
-        return count
-
-    def checkBeautiful(self, lst):
-        for i in range(0, len(lst)):
-            if lst[i] % (i+1) != 0 and (i+1) % lst[i] != 0:
-                return False
-        return True
+            if not visited[i] and (pos % i is 0 or i % pos is 0):
+                visited[i] = True
+                self.calculate(n, pos+1, visited)
+                visited[i] = False
 
 
-print(Solution().countArrangement(2))
+print(Solution().countArrangement(3))
