@@ -8,7 +8,7 @@ from common.ListNode import ListNode
 
 class Solution:
     def deleteDuplicates(self, head: ListNode) -> ListNode:
-        dummy = temp = ListNode(-1, head) # since head might also contain duplicate value
+        dummy = temp = ListNode(-1, head)  # since head might also contain duplicate value
         while head:
             if head.next and head.val == head.next.val:
                 while head.next and head.val == head.next.val:
