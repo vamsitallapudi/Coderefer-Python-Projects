@@ -21,18 +21,18 @@ class LinkedList:
         current.next = new_node
         return head
 
-    def initializebll(self, bll):
-        for i in range(1, 7):
+    def initializebll(self, bll, start=1, end=7):
+        for i in range(start, end):
             self.head = bll.insert_at_end(self.head, i)
         return self.head
 
     def print_data(self, head):
         while head:
-            print(head.data, end=" ")
+            print(head.val, end=" ")
             head = head.next
 
 
 def print_ll(head):
     while head:
-        print(head.data, end=" ")
+        print(head.val, end=" ")
         head = head.next

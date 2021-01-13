@@ -26,6 +26,12 @@ class BaseLinkedList:
             self.head = bll.insert_at_end(self.head, i)
         return self.head
 
+
+    def initializebll2(self, bll):
+        for i in range(2, 6):
+            self.head = bll.insert_at_end(self.head, i)
+        return self.head
+
     def print_data(self, head):
         while head:
             print(head.data, end=" ")
